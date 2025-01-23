@@ -678,7 +678,9 @@ const Body = () => {
       <div className="search"> Search</div>
       <div className="restro-container">
         {ListObj.map((result)=>(
-        <RestroCard resData ={result}/>
+         
+         <RestroCard key={result?.info?.id ||"not result"} resData ={result}/>
+       
         ))}
       </div>
     </div>
