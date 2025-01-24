@@ -1,4 +1,4 @@
-
+import { HeaderUl } from "../../utils/Constant"
 
 
 
@@ -6,7 +6,8 @@ const Header =()=>{
     return(
         <div className="Header">
             <div className="logoContainer">
-                <img className="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVsGXC_9mpCqWyXCKNT0ykheH9IloRhNn53A&s"/>
+                <img className="img" src={HeaderUl}/>
+                <img className="img" src={HeaderUl }/>
             </div>
             <div className="nav-items">
                 <ul>

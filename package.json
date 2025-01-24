@@ -1,4 +1,4 @@
-index.js{
+{
   "dependencies": {
     "parcel": "^2.13.3",
     "react": "^19.0.0",
