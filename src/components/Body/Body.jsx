@@ -1,13 +1,22 @@
 import RestroCard from "../RestroCard/RestroCard";
-import ListObjApp.js from "../../utils/mockData";
+import ListObj from "../../utils/mockData";
+
+import {useState} from "react"
 
 const Body = () => {
 
+  const [rated,useRated] =useState(ListObj)
+   
   return (
     <div className="body">
-      <div className="search"> Search</div>
+      <button  className="btn"  onClick={()=>{
+         const res = rated.filter((item)=> item.info.avgRating>4)
+         useRated(res)
+      }
+  }>
+  Top Rated Restaurant</button>
       <div className="restro-container">
-        {ListObj.map((result)=>(
+        {rated.map((result)=>(
          
          <RestroCard key={result?.info?.id ||"not result"} resData ={result}/>
        

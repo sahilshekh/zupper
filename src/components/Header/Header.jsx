@@ -7,7 +7,7 @@ const Header =()=>{
         <div className="Header">
             <div className="logoContainer">
                 <img className="img" src={HeaderUl}/>
-                <img className="img" src={HeaderUl }/>
+                
             </div>
             <div className="nav-items">
                 <ul>
