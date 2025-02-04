@@ -47,8 +47,7 @@ const Body = () => {
          
          <RestroCard key={result?.info?.id ||"not result"} resData ={result}/>
        
-        ))}index.css
-      ))}index.css
+        ))}
       </div>
     </div>
   );
