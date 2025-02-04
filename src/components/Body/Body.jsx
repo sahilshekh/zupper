@@ -6,6 +6,10 @@ import {useState,useEffect} from "react"
 const Body = () => {
 
   const [rated,useRated] =useState([])
+  const [search,setSearch] =useState("")
+  const [filter,setFilter] =useState([])
+
+
 // console.log(rated,"rated")
    useEffect(()=>{
      fetchData()
@@ -17,24 +21,34 @@ const Body = () => {
 
      
           useRated(result.data.cards[4]["card"]["card"]["gridElements"]["infoWithStyle"]["restaurants"])
-          
+          setFilter(result.data.cards[4]["card"]["card"]["gridElements"]["infoWithStyle"]["restaurants"])
        
       
   }
   return (
     <div className="body">
+    <input type="text"  value={search} onChange={(e)=>setSearch(e.target.value)}/>
+    <button onClick={()=>
+{
+    console.log(rated)
+  let SearchResult =rated.filter((e)=>e.info.name.includes(search))
+  setFilter(SearchResult)
+}
+    }>Search</button>
+
       <button  className="btn"  onClick={()=>{
-         const res = rated.filter((item)=> item.info.avgRating>4)
+         const res = rated.filter((item)=> item.info.avgRating>4.3)
          useRated(res)
       }
   }>
   Top Rated Restaurant</button>
       <div className="restro-container">
-        {rated.map((result)=>(
+        {filter.filter((e)=>e.info.name.includes(search) || e.info.cuisines.includes(search) ).map((result)=>(
          
          <RestroCard key={result?.info?.id ||"not result"} resData ={result}/>
        
-        ))}
+        ))}index.css
+      ))}index.css
       </div>
     </div>
   );

@@ -38,6 +38,14 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    margin: 20px;
+    margin: 20 20;
+    
+    
    
+}
+.btn{
+    margin-left: 20px;
+}
+.body{
+    padding: 10 0px;
 }
